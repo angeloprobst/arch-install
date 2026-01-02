@@ -1,3 +1,6 @@
-cryptsetup luksFormat /dev/nvme0n1p2
-cryptsetup open /dev/nvme0n1p2 luks0
+DEV=/dev/nvme0n1p2
+[ cryptsetup isLuks $DEV ] \
+  && cryptsetup erase $DEV
+cryptsetup luksFormat $DEV
+cryptsetup open $DEV luks0
 cryptsetup status luks0  # check
