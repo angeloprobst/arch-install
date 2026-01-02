@@ -15,7 +15,8 @@ pacman -Sy --needed --noconfirm git vim
 
 # clone repo
 cd /tmp
-git clone http://tiny.cc/afparch -o arch-install # or https://tinyurl.com/4k3brdad
+git clone http://tiny.cc/afparch
+mv afparch arch-install
 ls -lhatRr /tmp/arch-install  # check
 
 # disk layout
@@ -48,7 +49,8 @@ arch-chroot /mnt
 
 # clone again
 cd /tmp
-git clone http://tiny.cc/afparch -o arch-install
+git clone http://tiny.cc/afparch
+mv afparch arch-install
 
 # set locale
 vim /etc/locale.gen  # uncomment `en_US.UTF-8 UTF-8`
@@ -86,3 +88,9 @@ bash -x /tmp/arch-install/install-gnome.sh
 
 # enable startup services
 bash -x /tmp/arch-install/startup-services.sh
+
+# reboot
+exit
+umount -R /mnt
+reboot
+
