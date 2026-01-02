@@ -15,7 +15,7 @@ pacman -Sy --needed --noconfirm git vim
 
 # clone repo
 cd /tmp
-git clone http://tiny.cc/afparch  # or https://tinyurl.com/4k3brdad
+git clone http://tiny.cc/afparch -o arch-install # or https://tinyurl.com/4k3brdad
 ls -lhatRr /tmp/arch-install  # check
 
 # disk layout
