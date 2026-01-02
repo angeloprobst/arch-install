@@ -91,6 +91,6 @@ bash -x /tmp/arch-install/startup-services.sh
 
 # reboot
 exit
-umount -R /mnt
-reboot
+bash -x /tmp/arch-install/umount-and-reboot.sh
+
 
