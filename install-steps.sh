@@ -43,11 +43,12 @@ bash -x /tmp/arch-install/install-base.sh
 # generate fstab
 bash -x /tmp/arch-install/genfstab.sh
 
-# copy repo
-cp -R /tmp/arch-install /mnt/tmp/arch-install
-
 # enjail
 arch-chroot /mnt
+
+# clone again
+cd /tmp
+git clone http://tiny.cc/afparch -o arch-install
 
 # set locale
 vim /etc/locale.gen  # uncomment `en_US.UTF-8 UTF-8`
