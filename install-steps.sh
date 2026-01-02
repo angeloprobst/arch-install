@@ -30,7 +30,7 @@ bash -x /tmp/arch-install/lvm.sh
 # format and mount
 bash -x /tmp/arch-install/format-and-mount-disks.sh
 
-# set mirrors
+# [OPTIONAL] set mirrors
 bash -x /tmp/arch-install/dump-mirrorlist.sh
 cat /etc/pacman.d/mirrorlist  # check
 
@@ -42,6 +42,9 @@ bash -x /tmp/arch-install/install-base.sh
 
 # generate fstab
 bash -x /tmp/arch-install/genfstab.sh
+
+# copy repo
+cp -R /tmp/arch-install /mnt/tmp/arch-install
 
 # enjail
 arch-chroot /mnt
