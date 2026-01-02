@@ -1,3 +1,5 @@
+set -euo pipefail
+
 DEV=/dev/nvme0n1p2
 [ cryptsetup isLuks $DEV ] \
   && cryptsetup erase $DEV
